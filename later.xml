@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<div class="panel panel-criteria" id="criteria_citation">
+<a href="javascript:;" class="panel-collapse hidden js-remove-hidden_f">
+<i class="fa fa-times"/>
+</a>
+<fieldset class="criteria">
+<legend>Poświadczenie</legend>
+<div class="clone-this-content_f clone-this-content">
+<div class="row">
+<div class="small-4 columns" id="cit_tempus">
+<label>Czas <select id="cit_tempus" name="cit_tempus" size="1">
+<option value="" selected="selected">Quo tempore?</option>
+<option value="10">Xo saeculo</option>
+<option value="11">XIo saeculo</option>
+<option value="12">XIIo saeculo</option>
+<option value="13">XIIIo saeculo</option>
+<option value="14">XIVo saeculo</option>
+<option value="15">XVo saeculo</option>
+<option value="16">XVIo saeculo</option>
+</select>
+</label>
+</div>
+<div class="small-4 columns" id="cit_locus">
+<label>Miejsce <select id="cit_locus" name="cit_locus" size="1">
+<option value="" selected="selected">Qua in Poloniae regionis?</option>
+<option value="mlp">Polonia Minor</option>
+<option value="wlp">Polonia Maior</option>
+<option value="maz">Mazovia</option>
+<option value="sl">Silesia</option>
+<option value="pom">Pomerania</option>
+<option value="rus">Ruthenia</option>
+<option value="prus">Prussia</option>
+</select>
+</label>
+</div>
+<!-\- Słowo w cytacie -\->
+<div class="small-4 columns" id="cit_word">
+<label for="cit_word">Słowo w cytacie <input id="cit_word" size="40" name="cit_word" placeholder="Quod verbum quaeris?" type="text"/>
+</label>
+</div>
+</div>
+<a href="javascript:;" class="hidden delete-content_f delete-content">
+<i class="fa fa-times"/>
+</a>
+</div>
+<!-\-<a href="javascript:;" class="button tiny hidden js-remove-hidden_f panel-copy-button copy-fieldset_f">
+<i class="fa fa-plus"/> Dodaj następny</a>-\->
+</fieldset>
+</div> -->
+<!-- Pole przycisków -->
+<!--<div class="row" id="advanced_search_buttons">
+<div class="small-9 columns small-centered">
+<div class="row" id="advanced_search_buttons_1">
+<div class="small-9 columns small-centered">
+<ul class="small-block-grid-3 large-block-grid-3">
+<li>
+<a class="button" href="#criteria_morpho" id="criteria_morpho_button">
+<span data-template="i18n:text_direct" data-template-name="global.Pos"/>
+</a>
+</li>
+<li>
+<a class="button" href="#criteria_etymon" id="criteria_etymon_button">
+<span data-template="i18n:text_direct" data-template-name="global.Etymology"/>
+</a>
+</li>
+<li>
+<a class="button" href="#criteria_syntax" id="criteria_syntax_button">
+<span data-template="i18n:text_direct" data-template-name="global.Syntax"/>
+</a>
+</li>
+<li>
+<a class="button" href="#criteria_sense" id="criteria_sense_button">
+<span data-template="i18n:text_direct" data-template-name="global.Meaning"/>
+</a>
+</li>
+<li>
+<a class="button" href="#criteria_citation" id="criteria_citation_button">
+<span data-template="i18n:text_direct" data-template-name="global.Quotations"/>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div> -->
+<!-- Pole kryteriów - działająca stara wersja -->
+<!--<div class="row" id="advanced_search_criteria">
+<div class="row">
+<div class="small-10 columns small-centered" id="advanced_search_criteria_title">
+<a class="button expand">
+<span data-template="i18n:text_direct" data-template-name="advancedBrowse.criteria_title"/>
+</a>
+</div>
+</div>
+<div class="row">
+<div class="small-10 columns small-centered" id="advanced_search_criteria_form">
+<fieldset class="row criteria" id="criteria_morpho">
+<legend>
+<span data-template="i18n:text_direct" data-template-name="advancedBrowse.morpho_title"/>
+</legend>
+<div class="small-4 columns" id="gram_pos">
+<!-\-<label for="gram_pos">Część mowy</label>-\->
+<label>
+<span data-template="i18n:text_direct" data-template-name="advancedBrowse.morpho_pos.label"/>
+<select id="gram_pos" name="gram_pos" size="1">
+<option value="" selected="selected">Orationis pars</option>
+<option value="n">substantivum</option>
+<option value="v">verbum</option>
+<option value="adi">adiectivum</option>
+<option value="adv">adverbium</option>
+<option value="num">numerale</option>
+<option value="praep">praepositio</option>
+<option value="coni">coniunctio</option>
+<option value="part">particula</option>
+<option value="excl">exclamatio</option>
+</select>
+</label>
+</div>
+<div class="small-4 columns" id="gram_itype">
+<label>
+<span data-template="i18n:text_direct" data-template-name="advancedBrowse.morpho_iType.label"/>
+<select id="gram_itype" name="gram_itype" size="1">
+<option value="" selected="selected">Paradigma</option>
+<optgroup label="substantiva">
+<option value="1-a-ae">deklinacja 1 (rosae,-ae)</option>
+<option value="2-ius-ii">deklinacja 2 (filius,-ii)</option>
+<option value="2-us-i">deklinacja 2 (servus,-i)</option>
+<option value="2-er-eri">deklinacja 2 (puer,-i)</option>
+<option value="2-r-ri-m">deklinacja 2 (vir,-i)</option>
+<option value="2-um-i-n">deklinacja 2 (donum,-i)</option>
+<option value="3-">deklinacja 3</option>
+<option value="4-u-us-n">deklinacja 4 (genu,-us)</option>
+<option value="4-us-us-">deklinacja 4 (fructus,-us)</option>
+<option value="5-es-ei-">deklinacja 5</option>
+</optgroup>
+<optgroup label="verba">
+<option value="1-o-are">koniugacja 1 (amo,-are)</option>
+<option value="1d-or-sum">koniugacja 1 (deponentia)</option>
+<option value="2-eo-ere">koniugacja 2 (video,-ere)</option>
+<option value="2d-eor-sum">koniugacja 2 (deponentia)</option>
+<option value="2sd-eo-sum">koniugacja 2 (semideponentia)</option>
+<option value="3-o-ere">koniugacja 3 (lego,-ere)</option>
+<option value="3-io-ere">koniugacja 3 (capio,-ere)</option>
+<option value="3d-or-sum">koniugacja 3 (deponentia)</option>
+<option value="3sd-o-sum">koniugacja 3 (semideponentia)</option>
+<option value="4-io-ire">koniugacja 4 (audio,-ire)</option>
+<option value="4d-ior-sum">koniugacja 4 (deponentia)</option>
+</optgroup>
+<optgroup label="adiectiva">
+<option value="12-us-a_um">1/2 deklinacja (bonus,-a,-um)</option>
+<option value="12-er-era_erum">1/2 deklinacja (liber,-a,-um)</option>
+<option value="12-er-ra_rum">1/2 deklinacja (pulcher,-ra,-rum)</option>
+<option value="33-er-is_e">3 deklinacja (acer,-cris,-cre)</option>
+<option value="31-">3 deklinacja (felix)</option>
+<option value="32-is-is_e">3 deklinacja (gravis,-e)</option>
+</optgroup>
+</select>
+</label>
+</div>
+<div class="small-4 columns" id="gram_gen">
+<label>
+<span data-template="i18n:text_direct" data-template-name="advancedBrowse.morpho_gen.label"/>
+<select id="gram_gen" name="gram_gen" size="1">
+<option value="" selected="selected">Genus</option>
+<option value="m">masculinum</option>
+<option value="f">femininum</option>
+<option value="n">neutrum</option>
+</select>
+</label>
+</div>
+<a class="remove_criterion">(-) Usuń</a>
+</fieldset>
+<fieldset class="row criteria" id="criteria_etymon">
+<legend>Etymologia</legend>
+<!-\- Etymologia -\->
+<div class="row">
+<div class="small-12 columns" id="gram_etym">
+<div class="small-3 columns" id="gram_etym_lang">
+<!-\-<label for="gram_etym_lang">E qua linqua?</label>-\->
+<label for="gram_etym_lang">
+<span class="gram_etym_lang_label">
+<span data-template="i18n:text_direct" data-template-name="advancedBrowse.etym_lang_label"/>
+</span>
+<select name="gram_etym_lang" id="gram_etym_lang">
+<option value="" selected="selected">E qua lingua?</option>
+<option value="la">Latina</option>
+<option value="grc">Graeca</option>
+<option value="pl-x-med">Polona</option>
+<option value="hu-x-med">Hungarica</option>
+<option value="de-x-med">Germana</option>
+<option value="it-x-med">Italica</option>
+<option value="fr-x-med">Gallica</option>
+<option value="other">alia</option>
+</select>
+</label>
+</div>
+<div class="small-4 columns" id="gram_etym_word">
+<label for="gram_etym_word">
+<span class="gram_etym_lang_label">
+<span data-template="i18n:text_direct" data-template-name="advancedBrowse.etym_word_label"/>
+</span>
+<input type="text" size="40" id="gram_etym_word" name="gram_etym_word" placeholder="Jakiego słowa szukasz?"/>
+</label>
+</div>
+<div class="small-4 columns" id="gram_etym_glossa">
+<label for="gram_etym_word">
+<span class="gram_etym_lang_label">
+<span data-template="i18n:text_direct" data-template-name="advancedBrowse.etym_gloss_label"/>
+</span>
+<input type="text" size="40" id="gram_etym_glossa" name="gram_etym_glossa" placeholder=""/>
+</label>
+</div>
+</div>
+</div>
+<a class="remove_criterion">(-) Usuń</a>
+</fieldset>
+<!-\-<fieldset class="row criteria" id="criteria_syntax">
+<legend>Składnia</legend>
+<div class="small-12 columns">
+<div class="row">
+<!-\\- Łączliwość z przypadkiem -\\->
+<div class="small-3 columns" id="synt_casus">
+<!-\\-<label for="synt_casus">Quem casum regit?</label>-\\->
+<select id="synt_casus" name="synt_casus" size="1">
+<option value="" selected="selected">Quem casum regit?</option>
+<option value="gen">genetivus</option>
+<option value="dat">dativus</option>
+<option value="acc">accusativus</option>
+<option value="abl">ablativus</option>
+</select>
+</div>
+<!-\\- Łączliwość z przyimkiem -\\->
+<div class="small-3 columns" id="synt_praep">
+<!-\\-<label for="synt_praep">Qua praepositione?</label>-\\->
+<select id="synt_praep" name="synt_praep" size="1">
+<option value="" selected="selected">Quacum praepositione?</option>
+<option value="ab">ab</option>
+<option value="ad">ad</option>
+<option value="cum">cum</option>
+<option value="de">de</option>
+<option value="in">in</option>
+</select>
+</div>
+<!-\\- Łączliwość z konstrukcją składniową -\\->
+<div class="small-3 columns" id="synt_constr">
+<!-\\-<label for="synt_constr">Qua praepositione?</label>-\\->
+<select id="synt_constr" name="synt_constr" size="1">
+<option value="" selected="selected">Qualicum constructione?</option>
+<option value="aci">accusativus cum infinitivo</option>
+<option value="nci">nominativus cum infinitivo</option>
+<option value="accd">accusativus duplex</option>
+</select>
+</div>
+<!-\\- Łączliwość ze spójnikiem -\\->
+<div class="small-3 columns" id="synt_coni">
+<!-\\-<label for="synt_coni">Qua coniunctione?</label>-\\->
+<select id="synt_coni" name="synt_coni" size="1">
+<option value="" selected="selected">Qua coniunctione?</option>
+<option value="quod">quod</option>
+<option value="ut">ut</option>
+<option value="cum">cum</option>
+</select>
+</div>
+<div class="row">
+<!-\\- Łączliwość z wyrazem -\\->
+<div class="small-8 columns small-centered" id="synt_word">
+<label for="synt_word">Quocum alio verbo invenitur?</label>
+<input id="synt_word" type="text" size="40" name="synt_word" placeholder="Quod verbum quaeris?"/>
+</div>
+</div>
+</div>
+</div>
+<a class="remove_criterion">(-) Usuń</a>
+</fieldset> -\->
+<!-\- Znaczenie -\->
+<fieldset class="row criteria" id="criteria_sense">
+<legend>
+<span data-template="i18n:text_direct" data-template-name="advancedBrowse.sense_title"/>
+</legend>
+<div class="small-12 columns">
+<div class="row">
+<!-\- Domena znaczeniowa -\->
+<div class="small-4 columns" id="def_dom">
+<!-\-<label for="def_dom">Domena:</label>-\->
+<label>
+<span data-template="i18n:text_direct" data-template-name="advancedBrowse.sense_dom"/>
+<select name="def_dom" id="def_dom" size="1">
+<option value="" selected="selected">Scientiae artesque</option>
+<optgroup label="artes">
+<option value="astr">astronomia</option>
+<option value="math">mathematica</option>
+<option value="geom">geometria</option>
+<option value="phil">philosophia</option>
+<option value="theol">theologia</option>
+<option value="mus">musica</option>
+<option value="gram">grammatica</option>
+<option value="rhet">rhetorica</option>
+</optgroup>
+<optgroup label="voces pertinentes ad">
+<option value="nat">naturam</option>
+<option value="bot">botanicam</option>
+<option value="med">medicinam</option>
+<option value="iur">ius</option>
+<option value="milit">res militares</option>
+<option value="eccl">ecclesiam</option>
+</optgroup>
+</select>
+</label>
+</div>
+<!-\- Zmiana semantyczna (rozszerzenie metaforyczne itd.) -\->
+<div class="small-4 columns" id="def_usg">
+<!-\-<label for="def_usg">Sensus mutationes</label>-\->
+<label>
+<span data-template="i18n:text_direct" data-template-name="advancedBrowse.sense_change"/>
+<select name="def_usg" id="def_usg" size="1">
+<option value="" selected="selected">Sensus mutationes</option>
+<option value="metaph">metaphora</option>
+<option value="meton">metonymia</option>
+<option value="imag">imagines</option>
+</select>
+</label>
+</div>
+<!-\- Poświadczenie: klasyczne czy średniowieczne -\->
+<!-\-<div class="small-4 columns" id="def_class">
+<label for="def_class"/>
+<select name="def_class" id="def_class" size="1">
+<option value="" selected="selected">Quando sensus attestatur?</option>
+<option value="clas">sensus antiquus</option>
+<option value="medi">sensus medievalis</option>
+</select>
+</div> -\->
+</div>
+<div class="row">
+<!-\- Język definicji -\->
+<!-\- Słowo w definicji -\->
+<div class="small-10 columns centered" id="def_word">
+<fieldset>
+<legend>
+<span data-template="i18n:text_direct" data-template-name="advancedBrowse.sense_def_label"/>
+</legend>
+<div class="small-5 columns">
+<label>
+<span data-template="i18n:text_direct" data-template-name="advancedBrowse.sense_def_pl"/>
+<input id="def_word_pl" type="text" size="40" name="def_word" placeholder="Polona"/>
+</label>
+</div>
+<div class="small-5 columns">
+<label>
+<span data-template="i18n:text_direct" data-template-name="advancedBrowse.sense_def_la"/>
+<input id="def_word_la" type="text" size="40" name="def_word" placeholder="Latina"/>
+</label>
+</div>
+</fieldset>
+</div>
+</div>
+</div>
+<a class="remove_criterion">(-) Usuń</a>
+</fieldset>
+<!-\- Czas -\->
+<!-\-<fieldset class="row criteria" id="criteria_citation">
+<legend>Poświadczenie</legend>
+<div class="small-4 columns" id="cit_tempus">
+<select id="cit_tempus" name="cit_tempus" size="1">
+<option value="" selected="selected">Quo tempore?</option>
+<option value="10">Xo saeculo</option>
+<option value="11">XIo saeculo</option>
+<option value="12">XIIo saeculo</option>
+<option value="13">XIIIo saeculo</option>
+<option value="14">XIVo saeculo</option>
+<option value="15">XVo saeculo</option>
+<option value="16">XVIo saeculo</option>
+</select>
+</div>
+<!-\\- Miejsce -\\->
+<div class="small-4 columns" id="cit_locus">
+<select id="cit_locus" name="cit_locus" size="1">
+<option value="" selected="selected">Qua in Poloniae regionis?</option>
+<option value="mlp">Polonia Minor</option>
+<option value="wlp">Polonia Maior</option>
+<option value="maz">Mazovia</option>
+<option value="sl">Silesia</option>
+<option value="pom">Pomerania</option>
+<option value="rus">Ruthenia</option>
+<option value="prus">Prussia</option>
+</select>
+</div>
+<!-\\- Słowo w cytacie -\\->
+<div class="small-4 columns" id="cit_word">
+<label for="cit_word">Słowo w cytacie :</label>
+<input id="cit_word" type="text" size="40" name="cit_word" placeholder="Quod verbum quaeris?"/>
+</div>
+<a class="remove_criterion">(-) Usuń</a>
+</fieldset> -\->
+</div>
+</div>
+</div> -->

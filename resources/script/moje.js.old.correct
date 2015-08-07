@@ -1,0 +1,124 @@
+$(document).ready(function () {
+    $('#main_search_field, #nav_search_field').autocomplete({
+        autofocus: true,
+        delay: 200,
+        minLength: 3,
+        source: function (request, response) {
+            $.ajax({
+                url: "lemmaLookup.xql",
+                dataType: "json",
+                data: {
+                    term: request.term
+                }
+                ,
+                success: function (data) {
+                    response(data.result);
+                }
+                
+            });
+        },
+        /* Co po kliknięciu */
+        select: function (event, ui) {
+            /*Przekierowanie na stronę lemmatu*/
+            window.location.href = "./singleView.html?what=" + ui.item.value;            
+        },
+        response: function (data) {
+            return data.result;
+        }
+    }).autocomplete( "#ui-autocomplete" )._renderItem = function (ul,item) {
+ return $( "<li>" )
+.append( "<a>" + item.value + "<br>" + item.label + "</a>" )
+.appendTo( ul );         };
+   
+
+/* Zwinięcie spisu znaczeń */
+$("li.sense_full > ul.sense_full").toggle();
+
+$("i.sense-simple-sub").click(function () {
+    var level_next = String(parseInt($(this).attr("level")) + 1);
+    $(this).siblings("ul").toggle();
+});
+
+
+/* Zwinięcie not */
+$("div.note").toggle();
+$("i.note_sign").click(function () {
+    $(this).siblings("div.note").toggle();
+});
+
+
+});
+
+/* Wyszukiwanie zaawansowane: ukrywanie partial match */
+$("input[name='how[]']").change(function () {
+    $("#partial_matches").toggle(this.value == "partial");
+})
+    .change();
+
+/* Wyszukiwanie zaawansowane: ukrywanie info */
+
+$("#advanced_search_info_label").click(function () {
+    $("#advanced_search_info_panel").toggle();
+})
+    .click();
+
+
+$('#advanced_search_criteria_title').click(function () {
+    $('#advanced_search_criteria_form').toggle();
+})
+    .click();
+
+/* Fontes: przesyłanie formy */
+
+$("form input[type = 'submit']").toggleClass("hide button");
+$("#filter_siglum,#filter_auctor,#filter_titulus,#filter_genus").on('keyup change', function () {
+
+    /*alert($("#filter_form").children("input[type = 'button']"))*/
+    var siglum = $("#filter_siglum").val();
+    var auctor = $("#filter_auctor").val();
+    var titulus = $("#filter_titulus").val();
+    var genus = $("#filter_genus").val();
+    var form = $("#filter_form").serialize()
+    $.post('fontes_lookup.xql', form, function (success) {
+        $("#fontes_container")
+            .html(success)
+    })
+    /* Poprawna serializacja   $.post('',$( "#filter_form" ).serialize());
+     */
+}).change();
+
+/*Wyszukiwanie zaawansowane: ukrywanie kryteriów - wersja z przyciskami */
+/*$('#criteria_morpho,#criteria_etymon,#criteria_syntax,#criteria_sense,#criteria_time,#criteria_place').css('display','none');*/
+/*Wyszukiwanie zaawansowane: dodawanie kryteriów - wersja z przyciskami */
+/*$('#criteria_morpho_button,#criteria_etymon_button,#criteria_syntax_button,#criteria_sense_button,#criteria_time_button,#criteria_place_button').click(function() {
+    var thisButtonName = $(this).attr('id');
+    var criterionName = thisButtonName.substring(0,thisButtonName.indexOf('_button'));
+    $('#' + criterionName).css('display','block');
+console.log("kliknąłeś " + criterionName);
+});*/
+/*Wyszukiwanie zaawansowane: usuwanie kryteriów */
+/*$('.remove_criterion').click(function() {
+    var parentRow = $(this).closest('.criteria');
+    parentRow.css('display','none');
+})
+*/
+/*,
+        response: function(event,ui) {
+        
+        var array =  $.map(ui.content,function(value,key) {
+                return {value:key,label:value}
+            })
+        console.log(array);
+        return array;
+        
+        
+       
+        },
+        success: function (data) {
+            response($.map(data.form, function (value, key) {
+                return {
+                    label: value,
+                    value: key
+                };
+            }));
+        } */

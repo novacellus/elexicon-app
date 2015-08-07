@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml" data-template="templates:surround"
+    data-template-with="templates/page.html" data-template-at="content">
+    <div class="row" id="disamb_content" data-template="views:advancedDisamb">
+        <div id="advDisamb_results_container" class="small-8 columns">
+            <!-- Pole kryteriów wyszukiwania -->
+            <!-- 2. Nagłówek -->
+            <div class="panel" id="search-panel">
+                <h4>Wyniki wyszukiwania wg kryteriów</h4>
+            </div>
+            <!-- 2a. Nagłówek: kryteria wyszukiwania -->
+            <div class="panel" id="disamb_criteria">
+                <div class="disamb-search-term" data-template="views:search_phrase_print"/>
+                <div class="disamb-criteria" data-template="views:search_criteria_print"/>
+            </div>
+            <!-- Pole wyników -->
+            <div class="panel" id="disamb-results" data-template="views:results_print"/>
+        </div>
+        <!-- Pasek boczny -->
+        <div class="small-4 columns" id="advDisamb_sidebar" data-template="views:facets_print"/>
+    </div>
+</div>

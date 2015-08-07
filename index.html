@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>	
+<div xmlns="http://www.w3.org/1999/xhtml" data-template="templates:surround"
+        data-template-with="templates/page.html" data-template-at="content" id="content">
+        <div class="small-12 small-centered columns">
+                <div class="small-12 small-centered columns">
+                        <div class="small-12 centered">
+                                <!-- RzÄ&d okienka wyszukiwania -->
+                                <div class="row">
+                                        <div class="small-12 small-centered columns">
+                                                <div class="panel">
+                                                  <h4>
+                                                  <span data-template="i18n:text_direct"
+                                                  data-template-name="main.lexicon.name"/>
+                                                  <i/>
+                                                  </h4>
+                                                </div>
+                                                <div class="panel" id="search-panel">
+                                                  <form method="get" id="main_search_panel"
+                                                  action="views/indexRedirect.xql">
+                                                  <div class="row">
+                                                  <div class="small-9 small-centered columns">
+                                                  <div class="tooltip-holder text-right">
+                                                  <span data-template="views:tooltip"
+                                                  data-template-text="main.hint.searchfield"/>
+                                                  </div>
+                                                  <input autocomplete="off"
+                                                  class="ui-autocomplete-input"
+                                                  id="main_search_field" name="what"
+                                                  placeholder="Szukaj" type="text"/>
+                                                  </div>
+                                                  </div>
+                                                  <!-- RzÄ&d przycisku wyszukiwania -->
+                                                  <div class="row">
+                                                  <div class="small-6 small-centered columns">
+                                                  <button class="expand button alert" type="submit">
+                                                  <span data-template="i18n:text_direct"
+                                                  data-template-name="global.search"/>
+                                                  </button>
+                                                  </div>
+                                                  </div>
+                                                  </form>
+                                                </div>
+                                        </div>
+                                </div>
+                                <!-- Footer -->
+                                <div class="row">
+                                        <div class="small-12 small-centered columns">
+                                                <div class="panel" id="homepage-biglinks">
+                                                  <div class="row">
+                                                  <div class="small-6 columns">
+                                                  <a href="advancedBrowse.html" class="button">
+                                                  <span data-template="i18n:text_direct"
+                                                  data-template-name="global.Advanced"/>
+                                                  </a>
+                                                  </div>
+                                                  <div class="small-6 columns">
+                                                  <a href="fontes.html" class="button">
+                                                  <span data-template="i18n:text_direct"
+                                                  data-template-name="menu.sources"/>
+                                                  </a>
+                                                  </div>
+                                                  <div class="small-6 columns">
+                                                  <a href="documenta.html" class="button">
+                                                  <span data-template="i18n:text_direct"
+                                                  data-template-name="menu.documenta"/>
+                                                  </a>
+                                                  </div>
+                                                  <div class="small-6 columns">
+                                                  <a href="historia.html" class="button">
+                                                  <span data-template="i18n:text_direct"
+                                                  data-template-name="menu.historia"/>
+                                                  </a>
+                                                  </div>
+                                                  </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <div class="row">
+                                        <div class="small-12 small-centered columns">
+                                                <div class="panel row">
+                                                  <div class="small-6 columns logo-row">
+                                                  <a href="https://ijp-pan.krakow.pl/"
+                                                  class="logo-row" target="_blank">
+                                                  <img src="resources/images/LOGO_IJP-165x300.png"/>
+                                                  </a>
+                                                  <div class="logo-desc">
+                                                  <span data-template="i18n:text_direct"
+                                                  data-template-name="main.ijp.name"/>
+                                                  </div>
+                                                  </div>
+                                                  <div class="small-6 columns logo-row">
+                                                  <a href="http://www.ncn.gov.pl/"
+                                                  class="logo-row ncn" target="_blank">
+                                                  <img src="resources/images/ncn-logo.png"/>
+                                                  </a>
+                                                  <div class="logo-desc">
+                                                  <span data-template="i18n:text_direct"
+                                                  data-template-name="main.ncn.formula"/>
+                                                  </div>
+                                                  </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>

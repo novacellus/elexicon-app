@@ -1,0 +1,104 @@
+$(document).ready(function () {
+    $('#main_search_field, #nav_search_field').autocomplete({
+    autofocus:true,
+    delay:500,
+    minLength:3,
+        source: function (request, response) {
+            $.ajax({
+                url: "lemmaLookup.xql",
+                dataType: "json",
+                data: {term: request.term}
+                ,
+                success: function (data) {
+                response(data.result.form) 
+                }
+               });
+        },
+        select: function(event,ui) {
+        /*event.preventDefault();*/
+            window.location.href = "./singleView.html?what=" + ui.item.label; 
+            /*Przekierowanie na stronę lemmatu*/
+        }
+        
+      });
+});
+
+/*Zwinięcie elementów poniżej div.sense*/
+$("span.def_pl, span.def_la").click(function() {
+   $(this).nextAll().toggle();
+   
+});
+/*$("div.note").click(function() {
+    
+    $(this).find("*").toggle();
+});*/
+
+/* Wyszukiwanie zaawansowane: ukrywanie partial match */
+$("input[name='how']").change(function(), {
+    $("#partial_matches").toggle(this.value=="partial");
+    }
+);
+$("input[name='how']:checked").change();
+
+/*Wyszukiwanie zaawansowane: ukrywanie kryteriów */
+$('#criteria_morpho,#criteria_etymon,#criteria_syntax,#criteria_sense,#criteria_citation').css('display','none');
+/*Wyszukiwanie zaawansowane: dodawanie kryteriów */
+$('#criteria_morpho_button,#criteria_etymon_button,#criteria_syntax_button,#criteria_sense_button,#criteria_citation_button').click(function() {
+    var thisButtonName = $(this).attr('id');
+    var criterionName = thisButtonName.substring(0,thisButtonName.indexOf('_button'));
+    $('#' + criterionName).css('display','block');
+console.log("kliknąłeś " + criterionName);
+});
+/*Wyszukiwanie zaawansowane: usuwanie kryteriów */
+$('.remove_criterion').click(function() {
+    var parentRow = $(this).closest('.criteria');
+    parentRow.css('display','none');
+})
+
+
+/*Obsługa formularza: część mowy*/
+
+$("#gram_gen").css('display','none'); /* Ukrywa pole rodzaju*/
+$('#gram_itype').css('display','none'); /* Ukrywa pole paradygmatu*/
+
+$('#criteria_morpho').change(function() {    
+    var chosenValue = $(this).find(':selected').val()
+    var thisFieldset = $(this).closest('fieldset') /* Zmiany dotyczą tylko pól należących do tego samego fieldsetu*/
+    $(thisFieldset).find("#gram_gen").css('display','none'); /* Oczyszcza wybór*/
+    $(thisFieldset).find('#gram_itype').css('display','none'); /* Oczyszcza wybór */
+    $(thisFieldset).find('optgroup').css('display','block');
+    
+    if (chosenValue == 'n') { /*Rzeczowniki*/
+       $(thisFieldset).find('#gram_itype').css('display','block'); /*Wyświetla pole wyboru paradygmatu*/
+       $(thisFieldset).find('optgroup[label!="substantiva"]').css('display','none') /*Ogranicza wyświetlane paradygmaty do rzeczowników*/
+       $("#gram_gen").css('display','block'); /*Wyświetla pole wyboru rodzaju*/
+    }
+    else if (chosenValue == 'v') { /*Czasowniki*/
+       $(thisFieldset).find('#gram_itype').css('display','block'); /*Wyświetla pole wyboru paradygmatu*/
+       $(thisFieldset).find('optgroup[label!="verba"]').css('display','none') /*Ogranicza wyświetlane paradygmaty do rzeczowników*/
+    }
+    
+})
+
+
+
+ /*,
+        response: function(event,ui) {
+        
+        var array =  $.map(ui.content,function(value,key) {
+                return {value:key,label:value}
+            })
+        console.log(array);
+        return array;
+        
+        
+       
+        },
+        success: function (data) {
+            response($.map(data.form, function (value, key) {
+                return {
+                    label: value,
+                    value: key
+                };
+            }));
+        } */

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml" data-template="templates:surround"
+    data-template-with="templates/page.html" data-template-at="content">
+    <div class="row" id="disamb_message">
+        <!--<h4 id="success">
+<span data-template="i18n:text_direct" data-template-name="disambHomonyms.results.header.before"/>
+<em data-template="views:parameter_value" data-template-name="what"/>
+<span data-template="i18n:text_direct" data-template-name="disambHomonyms.results.header.after"/>
+</h4>-->
+    </div>
+    <!-- Pole wyników -->
+    <div class="small-8 columns" id="disamb_results">
+        <div class="row">
+            <div class="small-12 columns centered disamb_results_header">
+                <div class="panel">
+                    <h4>
+                        <span data-template="i18n:text_direct"
+                            data-template-name="disambHomonyms.results.header.before"/>
+                        <span class="search-term" data-template="views:parameter_value"
+                            data-template-name="what"/>
+                        <span data-template="i18n:text_direct"
+                            data-template-name="disambHomonyms.results.header.after"/>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <!-- Wyniki wyszukiwania: formy zależne (nr 3) -->
+        <!--<div class="panel" id="disamb_forms" data-template="search:suggestion">
+<h4 class="alert-box success">stanowi formę zależną</h4>
+<ul class="single_list small-block-grid-2 white-elements">
+<li>
+<span class="label ">nom. sg.</span> wyrazu <a class="lemma_link" href="http://localhost:8080/exist/apps/lexicon/singleView.html?what=caelum">caelum</a>
+</li>
+<li>
+<span class="label">acc. sg.</span> wyrazu <a class="lemma_link" href="http://localhost:8080/exist/apps/lexicon/singleView.html?what=caelum">caelum</a>
+</li>
+<li>
+<span class="label">voc. sg.</span> wyrazu <a class="lemma_link" href="http://localhost:8080/exist/apps/lexicon/singleView.html?what=caelum">caelum</a>
+</li>
+</ul>
+</div>-->
+        <!-- Wyniki wyszukiwania: homonimy) -->
+        <div class="panel" id="lemma-orth" data-template="search:lemma_print"/>
+        <!-- Formy sugerowane -->
+        <!--<div class="row" id="disamb_forms" data-template="search:suggestion"/>-->
+        <!-- Wyszukiwanie w cytatach -->
+        <div class="panel" id="disamb_quot" data-template="search:quotation_print"/>
+        <!-- Wyszukiwanie w definicjach -->
+        <div class="panel" id="disamb_def" data-template="search:definition_print"/>
+        <!-- Wyszukiwanie przybliżone -->
+        <div class="panel" id="disamb_approximate" data-template="search:lemma_fuzzy_print"/>
+    </div>
+    <!-- Pasek boczny -->
+    <div class="small-4 columns" id="disamb_sidebar">
+        <div class="row">
+            <div class="small-12 columns" id="disamb_sidebar_title">
+                <div class="panel">
+                    <h5>
+                        <span data-template="i18n:text_direct"
+                            data-template-name="disambHomonyms.sidebar.header"/>
+                        <em class="search-term" data-template="views:parameter_value"
+                            data-template-name="what"/>
+                    </h5>
+                </div>
+            </div>
+        </div>
+        <!-- Zasoby zewnętrzne: inne słowniki -->
+        <div class="row">
+            <div class="small-12 columns disamb_sidebar_dict">
+                <div class="panel">
+                    <h6 class="alert-box secondary">
+                        <span data-template="i18n:text_direct"
+                            data-template-name="disambHomonyms.sidebar.dicts"/>
+                    </h6>
+                    <ul class="sidebar_list">
+                        <li>
+                            <a class="disamb_sidebar_external_link" data-template="exter:link"
+                                data-template-which="georges" data-template-how="link"/>
+                        </li>
+                        <li>
+                            <a class="disamb_sidebar_external_link" data-template="exter:link"
+                                data-template-which="logeion" data-template-how="link"/>
+                        </li>
+                        <li>
+                            <a class="disamb_sidebar_external_link" data-template="exter:link"
+                                data-template-which="gaffiot" data-template-how="link"/>
+                        </li>
+                        <li>
+                            <a class="disamb_sidebar_external_link" data-template="exter:link"
+                                data-template-which="ducange" data-template-how="link"/>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-12 columns disamb_sidebar_corpora">
+                <div class="panel">
+                    <h6 class="alert-box secondary">
+                        <span data-template="i18n:text_direct"
+                            data-template-name="disambHomonyms.sidebar.corpora"/>
+                    </h6>
+                    <ul class="sidebar_list">
+                        <li>
+                            <a class="disamb_sidebar_external_link" data-template="exter:link"
+                                data-template-which="fontes" data-template-how="link"/>
+                        </li>
+                        <li>
+                            <a class="disamb_sidebar_external_link" data-template="exter:link"
+                                data-template-which="perseus" data-template-how="link"/>
+                        </li>
+                        <li>
+                            <a class="disamb_sidebar_external_link" data-template="exter:link"
+                                data-template-which="mgh" data-template-how="link"/>
+                        </li>
+                        <li>
+                            <a class="disamb_sidebar_external_link" data-template="exter:link"
+                                data-template-which="ccorporum" data-template-how="link"/>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-12 columns disamb_sidebar_web">
+                <div class="panel">
+                    <h6 class="alert-box secondary">
+                        <span data-template="i18n:text_direct"
+                            data-template-name="disambHomonyms.sidebar.internet"/>
+                    </h6>
+                    <ul class="sidebar_list">
+                        <li>
+                            <a class="disamb_sidebar_external_link" data-template="exter:link"
+                                data-template-which="archive"/>
+                        </li>
+                        <li>
+                            <a class="disamb_sidebar_external_link" data-template="exter:link"
+                                data-template-which="googleb"/>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- <br/>
+<div class="row" data-template="helper:session_print"/>-->
+    </div>
+</div>

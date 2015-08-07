@@ -1,0 +1,731 @@
+/* Application styles could go here */
+body {
+    background-image:url(../images/bg5.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;    
+}
+
+
+body,
+h1, h2, h3, h4, h5, h6,
+.top-bar-section ul li > a,
+button, .button {
+    font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    /*font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;*/
+}
+
+.bottom-holder {    
+    color: #666;
+    font-size: 10px;
+    margin-bottom: 10px;
+}
+
+.bg-source {    
+    float: left;
+    padding: 5px;
+}
+
+.issn {
+    float: right;
+    padding: 5px;
+}
+
+.top-bar, .dropdown {
+    -webkit-box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow:    0px 2px 4px 1px rgba(0, 0, 0, 0.25);
+    box-shadow:         0px 2px 4px 1px rgba(0, 0, 0, 0.25);
+}
+
+.top-bar input {
+    height: 29px;
+}
+
+#content {
+    margin-top: 20px;
+}
+
+#homepage-biglinks .button {
+    width: 100%;
+}
+
+#homepage-biglinks .row {
+    margin-bottom: -20px;
+}
+
+.logo-row {
+    display: inline;    
+    margin-bottom: 20px;
+    float: left;
+}
+
+.logo-row img {
+    max-height: 60px;
+    max-width: 28px;
+    margin-right: 15px;
+}
+
+.logo-desc {
+    display:inline;
+    margin-right:15px;
+}
+
+.search-term {
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* RÃ³Å¼ne - nowe*/
+
+/*Strona główna*/
+/*Autouzupełnianie*/
+.form-label, .entry-label {
+    margin:3px;
+}
+.entry-pointer {
+    margin:5px;
+}
+
+/*Strona dezambiguacji*/
+
+#disamb_results a {
+    font-weight: bold;
+}
+
+.disamb_forms_label {font-style:italic;}
+.disamb_forms_label::after {content:"wyrazu "}
+.lemma_link {
+    font-variant:small-caps
+}
+
+.this_lemma_link {
+    background-color:red;
+    color:white ! important;
+}
+/*#disamb_approximate_list > li:last-child::after {content:"?";}*/
+.disamb_quot_label::before {content:" "}
+.disamb_quot_label::after {content:": "}
+.disamb_excerpt::after,.disamb_excerpt::before {content:" ... "}
+.disamb_sidebar_external_label {font-variant:small-caps}
+.disamb_sidebar_external_label::after{content:" "}
+.disamb_sidebar_external_link {font-variant:small-caps}
+
+/*Strona dezambiguacji zaawansowane*/
+
+.advDisamb_sidebar_criterion_hits {font-variant:small-caps}
+.advDisamb_sidebar_criterion_hits::before {content:" x "}
+.advDisamb_entry {background-color:#FAFAFA;}
+.advDisamb_entry_excerpt_text::after {content:" ... "}
+.advDisamb_entry_excerpt_text {
+    font-size:0.8em;
+    margin-left:5px;
+}
+
+a.more_results_link {font-size:smaller}
+a.more_results_link::after {content:" >>";}
+
+a.ref {
+margin-right:4px;
+margin-left:2px;
+}
+
+.disamb-search-term {
+    margin-bottom: 10px;
+}
+
+.disamb-search-term span {
+    margin-bottom: 0;
+}
+
+.disamb-criteria fieldset {
+    margin: 0;
+}
+
+.disamb-criteria-item {
+    margin-bottom: 5px;
+}
+
+
+/* Strona wyszukiwania zaawansowanego */
+
+.panel-criteria {
+    position: relative;
+}
+
+.panel-criteria fieldset {
+    margin-top: 0;
+}
+
+.panel-collapse {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+#gram_etym_etym, #gram_etym_word, #gram_etym_glossa {
+    float:left;
+}
+
+#def_usg, #def_dom {
+    float:left;
+}
+
+/* Wyszukiwanie: KWIC */
+span.hi {background:yellow;}
+
+
+h3.entry_simple_lemma {
+}
+
+span.entry_simple_form {
+   /* font-weight:bold;*/
+}
+
+
+
+
+span.entry_simple_form, .entry_simple_etym, .entry_simple_gen, .entry_simple_iType, .entry_simple_pos {
+    margin-left:5px;
+}
+
+.lemma_link_sign {
+    margin: 0px 0px 0px 5px;
+    }
+
+/* Haslo - widok zlozony*/
+
+.entry * {
+    line-height:1.6em;
+    text-rendering:optimizeLegibility;
+}
+
+div.entry, div.sense, div.cit{
+    display:block;
+}
+
+div.cit {
+    margin-left:5px;
+}
+
+div.note {
+    margin-left:5px;
+    margin-top:5px;
+    margin-bottom:5px;
+    padding-left:5px;
+    display:inline;
+/*    border-left-color:#F5FF9E;
+    border-left-width:1px;
+    border-left-style:solid;*/
+}
+
+div.form {
+    display:block;
+}
+
+span.dict_label {
+font-style:italic;
+}
+
+span.orth_lemma {
+	font-weight:bold;
+	text-transform: uppercase;
+}
+
+span.orth_variant {
+	font-weight:bold;
+}
+
+span.iType {
+    margin: 0 2px 0 2px;
+    padding:0 2px 0 2px;
+    background:#AED8CE;
+}
+/*Tło rodzaju*/
+/*abbr.gen {
+    margin: 0 2px 0 2px;
+    padding:0 2px 0 2px;
+    background:#C6DFCC;
+}*/
+
+span. lang {}
+/*Tło etymologii*/
+/*span.etym {
+    margin: 0 2px 0 2px;
+    padding:0 2px 0 2px;
+    background-color:#E0EAD1;
+}*/
+
+span.etym span.mentioned {}
+
+/*Formatowanie słowników*/
+ul.vocabularia {
+    list-style-type:none;
+    display:inline;
+    margin:0px;
+}
+/*Tło słowników*/
+ul.vocabularia li {
+    margin: 0 2px 0 2px;
+    padding:0 2px 0 2px;
+    /*background-color:#F0F4CF;*/
+    display:inline;
+    
+}
+
+span.lang {
+    font-style:italic;
+}
+
+.etym span.mentioned {
+    /*background:orange;*/
+}
+
+.anomale-expand {
+    height:0.5em;
+    
+}
+
+div.anomale {
+    display:block;
+    font-size:0.9em;
+    margin-left:5px;
+    padding-left:5px;
+    margin-top:5px;
+    background-color:#FFE7E2;
+    /* Skopiowane z panel */
+    border-width: 2px medium 2px 2px;
+    border-style: solid none solid solid;
+    border-color: #FFF -moz-use-text-color #FFF #FFF;
+}
+
+div.anomale blockquote, blockquote.inline {
+    display:inline;
+}
+.domain-label {
+    /*border:1px dotted #008CBA;*/
+    background-color:#F0F4CF;
+    padding:0px 1px 0px 0px;
+    margin:0px 5px 0px 0px;
+}
+
+.entry_simple_sense .domain-label-simple, .sense-label-simple, .colloc-label-simple {
+    padding: 0rem 0.5rem 0rem 0.5rem;
+    margin:0rem 0.25rem 0rem 0.25rem;
+    height:1rem;
+    }
+
+
+    
+.sense .colloc-label {
+   /* border:1px dotted #008CBA;*/
+   padding:0px 1px 0px 0px;
+   margin:0px 5px 0px 0px;
+   background:#C6DFCC;
+   /*background-color:#FDFBF7;*/
+  /* border:1px dotted #008CBA;*/
+}
+
+.sense .collocPrep-label {
+   border-bottom-style:dotted;
+   border-bottom-color:#C6DFCC;
+   
+}
+
+div.sense {
+    margin-top:5px;
+    margin-bottom:5px;
+    margin-left:5px;
+    padding-left:5px;
+    background: #F0F0F2;
+    border: 2px solid white;
+    border-right: none;
+}
+
+span.def_pl, .def_la, .def_unknown {
+    font-style:italic;
+}
+span.def_pl::after, .def_la::after, .def_unknown::after {
+    content: " ";
+}
+
+span.oVar {
+    border-bottom-color:red;
+    border-bottom-style:dotted;
+}
+
+span.gloss_pl {
+    border-bottom-color:green;
+    border-bottom-style:dotted;
+    border-bottom-width:2px;
+    
+}
+
+
+span.numbering {
+    margin-left:2px;
+    margin-right:2px;
+    font-weight:bold;
+}
+
+i {
+    margin-left:5px;
+}
+
+i.expand-next-sense_f {
+    padding-right:5px;
+}
+
+.note_sign {
+    font-style:italic;
+}
+
+i.note_sign {
+    padding:0em 0.5em 0em 0.5em;
+}
+div.note {
+    background:#F0F0F2;
+    margin-top:5px;
+}
+
+entry *:empty
+{
+    display:none;
+}
+
+.tab-header {
+    display: none;
+}
+
+.sidebar_list{
+    list-style-type: none;
+    margin-bottom: 0px;
+}
+
+.panel-filter-button{
+    margin-top: 1.25rem;
+}
+
+/*disambHomonyms*/
+.active-lemma-link{
+    background-color: #43ac6a;
+    color: #fff;
+    padding: 0.4375rem 0.875rem;
+}
+
+fieldset:last-child {
+    margin-bottom: 0;
+}
+
+.entry-section {
+    margin-bottom: 20px;
+}
+
+.entry-section:last-child {
+    margin-bottom: 0;
+}
+
+
+/*Menu autozupelniania*/
+.ui-autocomplete {
+    /*background:#EFEFEF;*/
+    background-color:#FFF;
+    height:200px;
+    overflow-y: auto; 
+    /*overflow-x: hidden;*/
+}
+
+
+/*deploy css*/
+
+.tooltip-holder {
+    margin-bottom: 5px;
+}
+
+
+@media only screen and (min-width: 1400px) {
+    
+    .bottom-holder {
+        /*position: fixed;*/
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+}
+
+
+/*nadpisane reguly domyslne z zurb foundation*/
+
+.tabs-content > .content {
+    margin-bottom: 20px;
+    padding: 1.25rem;
+
+}
+
+.tabs dd.active a, .tabs .tab-title.active a {
+    background-color: #FDFBF7;
+}
+
+.tabs dd {
+    border: 1px solid #D8D8D8;
+    border-right: 0;
+}
+
+.tabs dd:last-child {
+    border-right: 1px solid #D8D8D8;    
+}
+
+.tabs dd.active {
+    border-bottom: 1px solid #FDFBF7;   
+}
+
+
+.tabs-content {
+    margin-top: -1px;
+}
+
+[class*="column"] + [class*="column"]:last-child {
+    float: left;
+}
+
+.has-tip, .has-tip:hover, .has-tip:focus {
+    border: none;
+}
+
+.has-tip {
+    color: #aaa;
+}
+
+fieldset legend {
+    background: none;
+}
+
+.top-bar,
+.top-bar-section li:not(.has-form) a:not(.button),
+.top-bar-section .has-form {
+    background: #5A3931;
+}
+
+button.alert, .button.alert {
+    background-color: #A4281C;
+}
+
+button.alert:hover, button.alert:focus, .button.alert:hover, .button.alert:focus {
+    background-color: #8A2218;
+}
+
+.panel {
+    background-color: #FDFBF7;
+}
+
+button, .button {
+    background-color: #373956;
+}
+
+button:hover, button:focus, .button:hover, .button:focus {
+    background-color: #6592A4;
+}
+
+button.secondary, .button.secondary {
+    background-color: #ECC62F;
+}
+
+button.secondary:hover, button.secondary:focus, .button.secondary:hover, .button.secondary:focus {
+    background-color: #E5D181;
+}
+
+button.success, .button.success {
+    background-color: #77871F;
+}
+
+button.success:hover, button.success:focus, .button.success:hover, .button.success:focus {
+    background-color: #495E00;
+}
+
+a {
+    /*color: #373956;*/
+    color: #008cba;
+}
+
+body a:hover{
+    color: #373956;
+}
+
+.top-bar .button, .top-bar button {
+    padding-top: .30rem;
+}
+
+/*utilities*/
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.border-r {
+    border-right: 1px solid #D8D8D8;
+}
+
+.border-l {
+    border-left: 1px solid #D8D8D8;
+}
+
+/*no-js style*/
+
+.no-js .tabs-content > .content {
+    display: block;
+    float: none;
+}
+
+.no-js .tabs {
+    margin-bottom: 20px !important;
+}
+
+.no-js .tabs dd.active {
+    border-bottom: 1px solid #D8D8D8;
+}
+
+.no-js .tabs dd > a, .no-js .tabs .tab-title > a{
+    background-color: #FDFBF7;
+}
+
+.no-js .tab-header {
+    display: block;
+}
+
+/*Dodatkowe kolory etykiet*/
+.label.warning,.label.color-orange {
+    background-color: #FDA013;
+    color: white;
+}
+
+.label.color-red {
+    background-color: #f04124;
+    color: white;
+}
+
+.label.color-green {
+    background-color: #43ac6a;
+    color: white;
+}
+
+.label.color-black {
+    background-color: black;
+    color: white;
+}
+
+.label.color-grey {
+    background-color: #e7e7e7;
+    color: #333333;
+}
+
+.label.color-blue {
+    background-color: blue;
+    color: white;
+}
+
+/*Kolor zwijaczy*/
+.expand-block .fa {
+    color: #008cba;
+    padding-right:0.5em; /*KN*/
+}
+
+/*Mniejszy margines na liscie zwijalnej*/
+.entry_simple_sense li {
+    padding: 0 0.625rem 0.1rem;
+}
+
+li > ul.entry_simple_sense {
+    margin-left:1rem;
+}
+
+/*Lista znaczeń*/
+ul.sense_simple {
+    list-style-type: none;
+    padding:0px;
+}
+
+.sense-simple-def-link {
+    margin-left:0.5em;
+}
+.anomalia {
+    overflow: hidden;
+    padding: 2px;
+}
+
+.sense blockquote {
+    border: none;
+    font-size:0.8em;
+    margin-top:2px;
+    margin-bottom:2px;
+    padding-top:2px;
+    padding-bottom:2px;
+    
+}
+/* Cytaty w anomaliach */
+.entry > blockquote {
+    margin: 2px 2px 2px 2px;
+    padding: 2px 2px 2px 2px;
+    border: none;
+    display:inline;
+    font-size:0.8em;
+}
+
+.button.tiny.deploy {
+    padding-top: 0.325rem;
+    padding-right: 0.65rem;
+    padding-bottom: 0.325rem;
+    padding-left: 0.65rem;
+    font-size: 0.6875rem;
+    margin-top: -1rem;
+}
+
+.button.no-margin {
+    margin-bottom: 0px;
+}
+
+.solid-height {
+    min-height: 25px;
+}
+
+/*Guzik do kopiowania w filtrze*/
+.button.panel-copy-button {
+    margin: 0px;
+}
+
+/*Podlew dla zawartosci kopiowanej*/
+.clone-this-content {
+    position: relative;
+    border: 1px solid gainsboro;
+    background-color: whitesmoke;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.delete-content {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.quarter-and-half-bottom-margin {
+    margin-bottom: 1.25rem !important;
+}
+
+.centered-468px {
+    margin: 0 auto;
+    width: 468px;
+}
+
+/*Kontener mapy*/
+#map-canvas {
+    width: 100%;
+    min-height: 300px;
+}

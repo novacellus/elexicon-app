@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml" data-template="templates:surround"
+    data-template-with="templates/page.html" data-template-at="content">
+    <div class="small-12 small-centered columns">
+        <div class="small-12 centered">
+            <div class="row">
+                <div class="small-12 small-centered columns">
+                    <div class="panel" id="title-panel">
+                        <h4>
+                            <span data-template="i18n:text_direct"
+                                data-template-name="advancedBrowse.pagetitle"/>
+                        </h4>
+                    </div>
+                    <!-- Pole wyszukiwania -->
+                    <form action="advancedDisamb.html" method="post">
+                        <div class="panel" id="search-panel">
+                            <div class="row" id="advanced_search">
+                                <!-- Lewe pole: pole wyszukiwania frazy -->
+                                <div class="small-8 columns">
+                                    <div class="row">
+                                        <div class="small-12 columns">
+                                            <div class="tooltip-holder text-right">
+                                                <span data-template="views:tooltip"
+                                                  data-template-text="advBrowse.hint.search.field"
+                                                  data-template-id="advanced_info"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row collapse">
+                                        <div class="small-9 columns">
+                                            <input autocomplete="off" class="ui-autocomplete-input"
+                                                id="advanced_search_field" name="what" type="text"/>
+                                        </div>
+                                        <div class="small-3 columns">
+                                            <button id="advanced_search_submit"
+                                                class="button alert postfix" type="submit">
+                                                <span data-template="i18n:text_direct"
+                                                  data-template-name="global.search"/>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="row"/>
+                                    <div data-template="views:tooltip_custom"
+                                        data-template-type="advanced_search_info_panel">
+                                        <div class="small-6 columns">
+                                            <small>By default full matching is performed. If you
+                                                wish to look up for partial matches, you need to use
+                                                wildcards:</small>
+                                            <ul>
+                                                <li>
+                                                  <small>* (asterisk) - replaces any number of
+                                                  characters</small>
+                                                </li>
+                                                <li>
+                                                  <small>? (question mark) - replaces one
+                                                  character</small>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="small-6 columns">
+                                            <span class="label">Examples</span>
+                                            <ul>
+                                                <li>
+                                                  <small>
+                                                  <strong>*GER</strong> will yield ARMIGER, AGER
+                                                  etc.; <strong>GER*</strong> will yield both GERO
+                                                  and GERUNDIUM etc.</small>
+                                                </li>
+                                                <li>
+                                                  <small>
+                                                  <strong>?GER</strong> will yield AGER, but not
+                                                  ARMIGER; <strong>GER?</strong> will yield GERO,
+                                                  but not GERUNDIUM</small>
+                                                </li>
+                                                <li>
+                                                  <small>
+                                                  <strong>?GER*</strong> will yield AGER, AGERACIO,
+                                                  but not ARMIGER</small>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Prawe pole: gdzie wyszukiwać? -->
+                                <div class="small-3 small-offset-1 columns">
+                                    <div class="row">
+                                        <label>
+                                            <span data-template="i18n:text_direct"
+                                                data-template-name="advancedBrowse.where.label"/>
+                                        </label>
+                                        <input name="where[]" value="lemma" checked="checked"
+                                            type="checkbox"/>
+                                        <label>
+                                            <span data-template="i18n:text_direct"
+                                                data-template-name="advancedBrowse.where.entries"/>
+                                            <span data-template="views:tooltip"
+                                                data-template-text="advBrowse.hint.search.inLemmas"
+                                            />
+                                        </label>
+                                    </div>
+                                    <div class="row">
+                                        <input name="where[]" value="definition" type="checkbox"/>
+                                        <label>
+                                            <span data-template="i18n:text_direct"
+                                                data-template-name="advancedBrowse.where.definitions"/>
+                                            <span data-template="views:tooltip"
+                                                data-template-text="advBrowse.hint.search.inDefs"/>
+                                        </label>
+                                    </div>
+                                    <div class="row">
+                                        <input name="where[]" value="quotation" type="checkbox"/>
+                                        <label>
+                                            <span data-template="i18n:text_direct"
+                                                data-template-name="advancedBrowse.where.quotations"/>
+                                            <span data-template="views:tooltip"
+                                                data-template-text="advBrowse.hint.search.inQuotes"
+                                            />
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel" id="criteria">
+                            <div class="row">
+                                <div class="small-12 columns">
+                                    <div class="tooltip-holder">
+                                        <label>
+                                            <span data-template="i18n:text_direct"
+                                                data-template-name="advancedBrowse.criteria_title"/>
+                                            <span data-template="views:tooltip"
+                                                data-template-text="advBrowse.hint.criteria.main"/>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="small-12 columns">
+                                    <a href="#criteria_morpho" class="button tiny criteria-btn">
+                                        <i class="fa fa-plus-circle"/> <span data-template="i18n:text_direct"
+                                            data-template-name="global.Morphology"/></a>
+                                    <a href="#criteria_etymon" class="button tiny criteria-btn">
+                                        <i class="fa fa-plus-circle"/> <span data-template="i18n:text_direct"
+                                            data-template-name="global.Etymology"/></a>
+                                    <a href="#criteria_sense" class="button tiny criteria-btn">
+                                        <i class="fa fa-plus-circle"/> <span data-template="i18n:text_direct"
+                                            data-template-name="global.Meaning"/></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-criteria" id="criteria_morpho">
+                            <a href="javascript:;" class="panel-collapse hidden js-remove-hidden_f">
+                                <i class="fa fa-times"/>
+                            </a>
+                            <fieldset class="criteria">
+                                <legend> <span data-template="i18n:text_direct"
+                                    data-template-name="global.Morphology"/></legend>
+                                <div class="clone-this-content_f clone-this-content">
+                                    <div class="row">
+                                        <div class="small-4 columns" id="gram_pos_container">
+                                            <label><span data-template="i18n:text_direct"
+                                                data-template-name="global.Pos"/>
+                                                <select id="gram_pos" name="gram_pos" size="1">
+                                                  <option value="" selected=""></option>
+                                                    <option value="n">
+                                                        <span data-template="i18n:text_direct" data-template-name="pos.n"/>
+                                                    </option>
+                                                  <option value="v">
+                                                      <span data-template="i18n:text_direct" data-template-name="pos.v"/>
+                                                  </option>
+                                                  <option value="adi">
+                                                      <span data-template="i18n:text_direct" data-template-name="pos.adi"/>
+                                                  </option>
+                                                  <option value="adv">
+                                                      <span data-template="i18n:text_direct" data-template-name="pos.adv"/>
+                                                  </option>
+                                                  <option value="num">
+                                                      <span data-template="i18n:text_direct" data-template-name="pos.num"/>
+                                                  </option>
+                                                  <option value="praep">
+                                                      <span data-template="i18n:text_direct" data-template-name="pos.praep"/>
+                                                  </option>
+                                                  <option value="coni">
+                                                      <span data-template="i18n:text_direct" data-template-name="pos.con"/>
+                                                  </option>
+                                                  <option value="part">
+                                                      <span data-template="i18n:text_direct" data-template-name="pos.part"/>
+                                                  </option>
+                                                  <option value="excl">
+                                                      <span data-template="i18n:text_direct" data-template-name="pos.excl"/>
+                                                  </option>
+                                                </select>
+                                            </label>
+                                        </div>
+                                        <div class="small-4 columns" id="gram_itype_container">
+                                            <label>
+                                                <span data-template="i18n:text_direct" data-template-name="global.Inflection"/>
+                                                <select id="gram_itype" name="gram_itype"
+                                                  size="1">
+                                                    <option value="" selected="">
+                                                        <span data-template="i18n:text_direct" data-template-name="global.I_Type"/>
+                                                    </option>
+                                                  <optgroup label="substantiva">
+                                                      <option value="1-a-ae">
+                                                          <span data-template="i18n:text_direct" data-template-name="infl.declension"/> 1
+                                                  (rosae,-ae)</option>
+                                                      <option value="2-ius-ii"><span data-template="i18n:text_direct" data-template-name="infl.declension"/> 2
+                                                  (filius,-ii)</option>
+                                                      <option value="2-us-i"><span data-template="i18n:text_direct" data-template-name="infl.declension"/> 2
+                                                  (servus,-i)</option>
+                                                      <option value="2-er-eri"><span data-template="i18n:text_direct" data-template-name="infl.declension"/> 2
+                                                  (puer,-i)</option>
+                                                      <option value="2-r-ri-m"><span data-template="i18n:text_direct" data-template-name="infl.declension"/> 2
+                                                  (vir,-i)</option>
+                                                      <option value="2-um-i-n"><span data-template="i18n:text_direct" data-template-name="infl.declension"/> 2
+                                                  (donum,-i)</option>
+                                                      <option value="3-"><span data-template="i18n:text_direct" data-template-name="infl.declension"/> 3</option>
+                                                      <option value="4-u-us-n"><span data-template="i18n:text_direct" data-template-name="infl.declension"/> 4
+                                                  (genu,-us)</option>
+                                                      <option value="4-us-us-"><span data-template="i18n:text_direct" data-template-name="infl.declension"/> 4
+                                                  (fructus,-us)</option>
+                                                      <option value="5-es-ei-"><span data-template="i18n:text_direct" data-template-name="infl.declension"/> 5</option>
+                                                  </optgroup>
+                                                  <optgroup label="verba">
+                                                      <option value="1-o-are"><span data-template="i18n:text_direct" data-template-name="infl.conjugation"/> 1
+                                                  (amo,-are)</option>
+                                                      <option value="1d-or-sum"><span data-template="i18n:text_direct" data-template-name="infl.conjugation"/> 1
+                                                  (deponentia)</option>
+                                                      <option value="2-eo-ere"><span data-template="i18n:text_direct" data-template-name="infl.conjugation"/> 2
+                                                  (video,-ere)</option>
+                                                      <option value="2d-eor-sum"><span data-template="i18n:text_direct" data-template-name="infl.conjugation"/> 2
+                                                  (deponentia)</option>
+                                                      <option value="2sd-eo-sum"><span data-template="i18n:text_direct" data-template-name="infl.conjugation"/> 2
+                                                  (semideponentia)</option>
+                                                      <option value="3-o-ere"><span data-template="i18n:text_direct" data-template-name="infl.conjugation"/> 3
+                                                  (lego,-ere)</option>
+                                                      <option value="3-io-ere"><span data-template="i18n:text_direct" data-template-name="infl.conjugation"/> 3
+                                                  (capio,-ere)</option>
+                                                      <option value="3d-or-sum"><span data-template="i18n:text_direct" data-template-name="infl.conjugation"/> 3
+                                                  (deponentia)</option>
+                                                      <option value="3sd-o-sum"><span data-template="i18n:text_direct" data-template-name="infl.conjugation"/> 3
+                                                  (semideponentia)</option>
+                                                      <option value="4-io-ire"><span data-template="i18n:text_direct" data-template-name="infl.conjugation"/> 4
+                                                  (audio,-ire)</option>
+                                                      <option value="4d-ior-sum"><span data-template="i18n:text_direct" data-template-name="infl.conjugation"/> 4
+                                                  (deponentia)</option>
+                                                  </optgroup>
+                                                  <optgroup label="adiectiva">
+                                                      <option value="12-us-a_um">1/2 <span data-template="i18n:text_direct" data-template-name="infl.declesion"/>
+                                                  (bonus,-a,-um)</option>
+                                                      <option value="12-er-era_erum">1/2 <span data-template="i18n:text_direct" data-template-name="infl.declesion"/>
+                                                  (liber,-a,-um)</option>
+                                                      <option value="12-er-ra_rum">1/2 <span data-template="i18n:text_direct" data-template-name="infl.declesion"/>
+                                                  (pulcher,-ra,-rum)</option>
+                                                      <option value="33-er-is_e">3 <span data-template="i18n:text_direct" data-template-name="infl.declesion"/>
+                                                  (acer,-cris,-cre)</option>
+                                                      <option value="31-">3 <span data-template="i18n:text_direct" data-template-name="infl.declesion"/> (felix)</option>
+                                                      <option value="32-is-is_e">3 <span data-template="i18n:text_direct" data-template-name="infl.declesion"/>
+                                                  (gravis,-e)</option>
+                                                  </optgroup>
+                                                </select>
+                                            </label>
+                                        </div>
+                                        <div class="small-4 columns" id="gram_gen_container">
+                                            <label><span data-template="i18n:text_direct" data-template-name="global.Gender"/> <select id="gram_gen" name="gram_gen"
+                                                  size="1">
+                                                  <option value="" selected=""></option>
+                                                <option value="m"><span data-template="i18n:text_direct" data-template-name="gen.m"/></option>
+                                                <option value="f"><span data-template="i18n:text_direct" data-template-name="gen.f"/></option>
+                                                <option value="n"><span data-template="i18n:text_direct" data-template-name="gen.n"/></option>
+                                                </select>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <a href="javascript:;"
+                                        class="hidden delete-content_f delete-content">
+                                        <i class="fa fa-times"/>
+                                    </a>
+                                </div>
+                                <!--<a href="javascript:;" class="button tiny hidden js-remove-hidden_f panel-copy-button copy-fieldset_f">
+<i class="fa fa-plus"/> Dodaj następny</a>-->
+                            </fieldset>
+                        </div>
+                        <div class="panel panel-criteria" id="criteria_etymon">
+                            <a href="javascript:;" class="panel-collapse hidden js-remove-hidden_f">
+                                <i class="fa fa-times"/>
+                            </a>
+                            <fieldset class="criteria">
+                                <legend><span data-template="i18n:text_direct"
+                                    data-template-name="global.Etymology"/></legend>
+                                <div class="clone-this-content_f clone-this-content">
+                                    <div class="row">
+                                        <div class="small-3 columns" id="gram_etym_lang_container">
+                                            <label for="gram_etym_lang"><span data-template="i18n:text_direct"
+                                                data-template-name="advancedBrowse.etym_lang_label"/><select
+                                                  name="gram_etym_lang" id="gram_etym_lang">
+                                                  <option value="" selected="selected"></option>
+                                                    <option value="la">
+                                                        <span data-template="i18n:text_direct" data-template-name="lang.lat"/>
+                                                    </option>
+                                                  <option value="grc">
+                                                      <span data-template="i18n:text_direct" data-template-name="lang.gre"/>
+                                                  </option>
+                                                  <option value="pl-x-med">
+                                                      <span data-template="i18n:text_direct" data-template-name="lang.pl"/>
+                                                  </option>
+                                                  <option value="hu-x-med">
+                                                      <span data-template="i18n:text_direct" data-template-name="lang.hu"/>
+                                                  </option>
+                                                  <option value="de-x-med">
+                                                      <span data-template="i18n:text_direct" data-template-name="lang.de"/>
+                                                  </option>
+                                                    <option value="it-x-med"><span data-template="i18n:text_direct" data-template-name="lang.it"/></option>
+                                                    <option value="fr-x-med"><span data-template="i18n:text_direct" data-template-name="lang.fr"/></option>
+                                                    <option value="other"><span data-template="i18n:text_direct" data-template-name="lang.other"/></option>
+                                                </select>
+                                            </label>
+                                        </div>
+                                        <div class="small-4 columns" id="gram_etym_word_container">
+                                            <label for="gram_etym_word"><span data-template="i18n:text_direct" data-template-name="advancedBrowse.etym_word_label"/> <input size="40"
+                                                  id="gram_etym_word" name="gram_etym_word"
+                                                  placeholder="" type="text"/>
+                                            </label>
+                                        </div>
+                                        <div class="small-4 columns" id="gram_etym_glossa_container">
+                                            <label for="gram_etym_word"><span data-template="i18n:text_direct" data-template-name="advancedBrowse.etym_gloss_label"/> <input
+                                                  size="40" id="gram_etym_glossa"
+                                                  name="gram_etym_glossa" placeholder="" type="text"
+                                                />
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <a href="javascript:;"
+                                        class="hidden delete-content_f delete-content">
+                                        <i class="fa fa-times"/>
+                                    </a>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="panel panel-criteria" id="criteria_sense">
+                            <a href="javascript:;" class="panel-collapse hidden js-remove-hidden_f">
+                                <i class="fa fa-times"/>
+                            </a>
+                            <fieldset class="criteria">
+                                <legend><span data-template="i18n:text_direct"
+                                    data-template-name="global.Meaning"/></legend>
+                                <div class="clone-this-content_f clone-this-content">
+                                    <div class="row">
+                                        <div class="small-4 columns" id="def_dom_container">
+                                            <label><span data-template="i18n:text_direct" data-template-name="advancedBrowse.sense_dom"/> <select name="def_dom" id="def_dom"
+                                                  size="1">
+                                                <option value="" selected="selected">
+                                                    <span data-template="i18n:text_direct" data-template-name="advancedBrowse.sense_dom"/>
+                                                </option>
+                                                  <optgroup label="art">
+                                                      <option value="astr">
+                                                          <span data-template="i18n:text_direct" data-template-name="dom.astr"/>
+                                                      </option>
+                                                      <option value="math"><span data-template="i18n:text_direct" data-template-name="dom.mat"/></option>
+                                                      <option value="geom"><span data-template="i18n:text_direct" data-template-name="dom.geom"/></option>
+                                                      <option value="phil"><span data-template="i18n:text_direct" data-template-name="dom.phil"/></option>
+                                                      <option value="theol"><span data-template="i18n:text_direct" data-template-name="dom.theol"/></option>
+                                                      <option value="mus"><span data-template="i18n:text_direct" data-template-name="dom.mus"/></option>
+                                                      <option value="gram"><span data-template="i18n:text_direct" data-template-name="dom.gram"/></option>
+                                                      <option value="rhet"><span data-template="i18n:text_direct" data-template-name="dom.rhet"/></option>
+                                                  </optgroup>
+                                                  <optgroup label="voces pertinentes ad">
+                                                      <option value="nat"><span data-template="i18n:text_direct" data-template-name="dom.biol"/></option>
+                                                      <option value="bot"><span data-template="i18n:text_direct" data-template-name="dom.bot"/></option>
+                                                      <option value="med"><span data-template="i18n:text_direct" data-template-name="dom.med"/></option>
+                                                      <option value="iur"><span data-template="i18n:text_direct" data-template-name="dom.leg"/></option>
+                                                      <option value="milit"><span data-template="i18n:text_direct" data-template-name="dom.milit"/></option>
+                                                      <option value="eccl"><span data-template="i18n:text_direct" data-template-name="dom.eccl"/></option>
+                                                  </optgroup>
+                                                </select>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <!-- Słowo w definicji -->
+                                        <div class="small-12 columns" id="def_word">
+                                            <fieldset>
+                                                <legend>
+                                                    <span data-template="i18n:text_direct" data-template-name="advancedBrowse.sense_def_label"/>
+                                                    </legend>
+                                                <div class="row">
+                                                  <div class="small-6 columns">
+                                                      <label><span data-template="i18n:text_direct" data-template-name="advancedBrowse.sense_def_pl"/> <input id="def_word_pl"
+                                                  size="40" name="def_word" placeholder=""
+                                                  type="text"/>
+                                                  </label>
+                                                  </div>
+                                                  <div class="small-6 columns">
+                                                      <label><span data-template="i18n:text_direct" data-template-name="advancedBrowse.sense_def_la"/> <input id="def_word_la"
+                                                  size="40" name="def_word" placeholder="Latina"
+                                                  type="text"/>
+                                                  </label>
+                                                  </div>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                    <a href="javascript:;"
+                                        class="hidden delete-content_f delete-content">
+                                        <i class="fa fa-times"/>
+                                    </a>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

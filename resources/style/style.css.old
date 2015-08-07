@@ -1,0 +1,308 @@
+#content {
+}
+#main_search_panel {
+    background-image:url(../images/indeks.jpg);
+    background-position: center center;
+    margin-top:30px;
+margin:20px 20px 20px 20px;
+    padding-top:20px;
+}
+#kolumna_haslo_sidebar {
+/*border-left-color:black;
+border-left-style:solid;
+border-left-width:thin;
+*/    /*background-color: red;*/
+/*margin-top:100px;*/
+}
+
+/* Różne - nowe*/
+/*Strona dezambiguacji*/
+.disamb_forms_label {font-style:italic;}
+.disamb_forms_label::after {content:"wyrazu "}
+.lemma_link {
+font-variant:small-caps
+}
+.this_lemma_link {
+background-color:red;
+color:white ! important;
+}
+/*#disamb_approximate_list > li:last-child::after {content:"?";}*/
+.disamb_quot_label::before {content:" "}
+.disamb_quot_label::after {content:": "}
+.disamb_excerpt::after,.disamb_excerpt::before {content:" ... "}
+.disamb_sidebar_external_label {font-variant:small-caps}
+.disamb_sidebar_external_label::after{content:" "}
+.disamb_sidebar_external_link {font-variant:small-caps}
+
+/*Strona dezambiguacji zaawansowane*/
+/*.advDisamb_sidebar_criterion_label { font-variant:small-caps }*/
+.advDisamb_sidebar_criterion_hits {font-variant:small-caps}
+.advDisamb_sidebar_criterion_hits::before {content:" x "}
+.advDisamb_entry {background-color:#FAFAFA;}
+.advDisamb_entry_excerpt_text::after {content:" ... "}
+.advDisamb_entry_excerpt_text {
+font-size:0.8em;
+margin-left:5px;
+}
+
+a.more_results_link {font-size:smaller}
+a.more_results_link::after {content:" >>";}
+
+/* Strona wyszukiwania zaawansowanego */
+form .row .criteria {
+   /* margin-bottom:10px !important;
+    border-bottom:black;
+    border-bottom-width:thin;
+    border-bottom-style:solid;
+    padding-bottom:15px;*/
+}
+
+
+#advanced_search_submit {
+/*    left:50%;
+*/}
+
+.advanced_search_field {
+    
+}
+
+.advanced_search_where_label {
+    margin-left:5px;
+    width:150px;
+    
+}
+
+#advanced_search_criteria_title {
+    text-align:center;
+}
+
+#gram_etym_etym, #gram_etym_word, #gram_etym_glossa {
+    float:left;
+}
+
+#def_usg, #def_dom {
+    float:left;
+}
+
+/* Wyszukiwanie: KWIC */
+span.hi {background:yellow;}
+
+
+h3.entry_simple_lemma {
+}
+span.entry_simple_form {
+   /* font-weight:bold;*/
+}
+
+span.entry_simple_form, .entry_simple_etym, .entry_simple_gen, .entry_simple_iType, .entry_simple_pos {
+    margin-left:5px;
+}
+
+
+/* Hasło - widok złożony*/
+
+.entry * {
+    line-height:1.6em;
+    text-rendering:optimizeLegibility;
+}
+
+div.entry, div.sense, div.cit, div.note_container {
+    display:block;
+}
+
+
+div.cit {
+    margin-left:5px;
+}
+
+div.note_container {
+    margin-left:5px;
+    margin-top:5px;
+    margin-bottom:5px;
+    padding-left:5px;
+    border-left-color:#F5FF9E;
+    border-left-width:1px;
+    border-left-style:solid;
+}
+
+div.form {
+    display:block;
+}
+
+abbr.iType {
+    margin: 0 2px 0 2px;
+    padding:0 2px 0 2px;
+    /*background:#AED8CE;*/
+}
+abbr.gen {
+    margin: 0 2px 0 2px;
+    padding:0 2px 0 2px;
+/*    background:#C6DFCC;*/
+}
+
+span.etym {
+    margin: 0 2px 0 2px;
+    padding:0 2px 0 2px;
+    /*background-color:#E0EAD1;*/
+}
+
+
+ul.vocabularia {
+    list-style-type:none;
+    display:inline;
+    margin:0px;
+}
+
+ul.vocabularia li {
+    margin: 0 2px 0 2px;
+    padding:0 2px 0 2px;
+    /*background-color:#F0F4CF;*/
+    display:inline;
+    
+}
+
+.etym span.mentioned {
+    /*background:orange;*/
+}
+
+div.sense {
+    margin-top:5px;
+    margin-bottom:5px;
+    margin-left:5px;
+    padding-left:5px;
+    border-left-color:#DCF511;
+    border-left-width:2px;
+    border-left-style:double;
+}
+
+span.def_pl, .def_la, .def_unknown {
+    font-style:italic;
+}
+
+span.gloss_pl {
+    border-bottom-color:green;
+    border-bottom-style:dotted;
+}
+
+span.numbering {
+    margin-left:2px;
+    margin-right:2px;
+    font-weight:bold;
+}
+
+entry *:empty
+{
+    display:none;
+}
+
+i.note_sign {
+    font-style:normal;
+}
+i.note_sign::after {
+    content:" ";
+}
+
+/*i.sense-simple-sub::before,i.sense-simple-sub::after,i.sense-simple-full::before {
+    content: "  ";
+}*/
+i {
+   padding:5px;
+}
+
+span.note_sign {
+    font-style:italic;
+}
+
+/*
+ * 
+ * 
+strong:after, em:after, span:after {
+    content: " ";
+}*/
+
+/*.single_list {
+    margin-top:10px !important;
+
+    margin-bottom:10px !important;
+}
+
+.meaning_list {
+    list-style-type:circle !important;
+}
+
+.Haslo {
+    display:block;
+}
+
+.accordion-sense {
+    padding-bottom:10px;
+}
+
+.Kursywa,.Definicjaa,.Rodzaj {
+    font-style:italic;
+    font-color:red;
+}
+
+.Definicjaa[$lang='pl'] {
+    display:none;
+}
+
+.Forma,.Numeracja {
+    font-weight:bold;
+}
+
+#haslo_pelny  .Etymologia {
+    background-color:orange;
+    margin-left:2px;
+    margin-right:2px;
+}
+
+#haslo_pelny  .Forma {
+    font-size:2em;
+    display:block;    
+}
+
+#haslo_pelny  .Slowniki {
+    display:block;
+    font-size:0.7em;
+}
+
+#haslo_pelny  .Slowniki::before {
+    content:"attested in: ";
+    
+}
+
+.Adres {
+    color:green;
+}
+*::after {
+  content:" ";  
+}
+
+    
+    .Numeracja:before {
+    content:"   ";
+    
+    }
+    
+    ul.grupaCytatu {
+        display:block;
+        padding-left: 14px;
+        list-style-type:circle;
+       
+    }
+    .grupaNumeracji {
+        display:block;
+    }
+.meaning_list {
+    list-style-type:circle;
+}*/
+
+/*Menu autozupełniania*/
+.ui-autocomplete {
+    background:#EFEFEF;
+    height:200px; /*Obcina do 50px;*/
+    width:50px;
+    overflow-y: auto; 
+    /*overflow-x: hidden;*/
+}
