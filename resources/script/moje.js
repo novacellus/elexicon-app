@@ -141,8 +141,8 @@ $(document).ready(function () {
             var lang = urlArray[4];
             if (lang == "") {
                 var pathMatch = currentUrl.match( appName ).index + appName.length;
-                var prefix = currentUrl.substr(0, pathMatch.index)
-            } else {
+                var prefix = currentUrl.substr(0, pathMatch);        
+                } else {
                 var pathMatch = currentUrl.match( appName + "/" + lang ).index + appName.length;
                 var prefix = currentUrl.substr(0, pathMatch);
 
@@ -203,14 +203,14 @@ $(document).ready(function () {
         },
         select: function (event, ui) {
             /*window.location.href = "./singleView.html?what=" + ui.item.value;*/
-             var pathMatch, prefix;
+            var pathMatch, prefix;
             var appName = 'elexicon';
             var currentUrl = window.location.href;
             var urlArray = currentUrl.split("/") // On main page it returns: "http:,,localhost,elexicon,en,#"
             var lang = urlArray[4];
             if (lang == "") {
                 var pathMatch = currentUrl.match( appName ).index + appName.length;
-                var prefix = currentUrl.substr(0, pathMatch.index)
+                var prefix = currentUrl.substr(0, pathMatch)
             } else {
                 var pathMatch = currentUrl.match( appName + "/" + lang ).index + appName.length;
                 var prefix = currentUrl.substr(0, pathMatch);

@@ -17,7 +17,7 @@ let $uri := concat( encode-for-uri($what),'')
 
 (: Sprawdza czy lemmat znajduje się w słowniku :)
 let $iflemma := if ($what ne '') then ( search:lemma($what) ) else ()
-
+let $currentUrl := helper:rewrite-rel((), (), (), 'linkWithLang', (),(),());
 
 (: Przekierowanie ze strony głównej: 1. strona hasła; 2. strona dezambigwacji. :)
    return (session:set-attribute('QUERY.what',$what) ,
