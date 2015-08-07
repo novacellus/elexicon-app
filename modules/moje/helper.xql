@@ -143,7 +143,7 @@ declare function helper:rewrite-rel ( $node as node()*, $model as map (*)*, $url
             concat($app_proxied_root_string, $toWhichLang, "/", $lang_strippedURLPath)
         )
         else if ($mode eq "linkWithLang") then (
-            concat($app_proxied_root_string,$lang,"/")
+            concat($app_proxied_root_string, $lang,"/")
         )
         else (
         element {name($node)} {
