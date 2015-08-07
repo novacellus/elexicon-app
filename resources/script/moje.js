@@ -134,7 +134,21 @@ $(document).ready(function () {
         select: function (event, ui) {
             /* Tworzy link do hasła, wykorzystując identyfikator "value" */
             /*window.location.href = "./singleView.html?what=" + ui.item.value;*/
-            window.location.href = "./lemma/" + ui.item.value;
+            var pathMatch, prefix;
+            var appName = 'elexicon';
+            var currentUrl = window.location.href;
+            var urlArray = currentUrl.split("/") // On main page it returns: "http:,,localhost,elexicon,en,#"
+            var lang = urlArray[4];
+            if (lang == "") {
+                var pathMatch = currentUrl.match( appName ).index + appName.length;
+                var prefix = currentUrl.substr(0, pathMatch.index)
+            } else {
+                var pathMatch = currentUrl.match( appName + "/" + lang ).index + appName.length;
+                var prefix = currentUrl.substr(0, pathMatch);
+
+            };
+            var href = prefix + "/" +(lang ? lang : "pl") + "/lemma/" + ui.item.value;
+            window.location.href = href;
         }
        
     });
@@ -188,9 +202,22 @@ $(document).ready(function () {
             ;
         },
         select: function (event, ui) {
-            /* Tworzy link do hasła, wykorzystując identyfikator "value" */
-            window.location.href = "./lemma/" + ui.item.value;
             /*window.location.href = "./singleView.html?what=" + ui.item.value;*/
+             var pathMatch, prefix;
+            var appName = 'elexicon';
+            var currentUrl = window.location.href;
+            var urlArray = currentUrl.split("/") // On main page it returns: "http:,,localhost,elexicon,en,#"
+            var lang = urlArray[4];
+            if (lang == "") {
+                var pathMatch = currentUrl.match( appName ).index + appName.length;
+                var prefix = currentUrl.substr(0, pathMatch.index)
+            } else {
+                var pathMatch = currentUrl.match( appName + "/" + lang ).index + appName.length;
+                var prefix = currentUrl.substr(0, pathMatch);
+
+            };
+            var href = prefix + "/" +(lang ? lang : "pl") + "/lemma/" + ui.item.value;
+            window.location.href = href;
         }
        
     }).data('ui-autocomplete')._renderItem = function (ul,item) {
